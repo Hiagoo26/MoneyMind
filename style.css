@@ -7,6 +7,7 @@
 
 :root {
     --bgcolor: #448040;
+    --textcoloremphasis: #2d552a;
     --textcolorprimary: #fff;
     --textcolorsecond: #000;
     --font: "Inter", sans-serif;
@@ -75,13 +76,30 @@ header {
 
 /* Hero Section */
 
+.section-hero {
+    position: relative;
+    background: radial-gradient(
+        circle at top,
+        rgba(68, 128, 64, 0.18),
+        transparent
+    ),
+    linear-gradient(
+        180deg, /*Direção do gradient*/ 
+        #f6faf6 0%,
+        #fff 100%
+    );
+}
+
 .hero-container {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    position: relative;
+    gap: 1.5rem;
     padding: 1rem;
     min-height: 70vh;
+    z-index: 1;
 }
 
 .hero-title {
@@ -90,16 +108,18 @@ header {
     color: var(--bgcolor);
 }
 
+.hero-title span {
+    color: var(--textcoloremphasis);
+}
+
 .hero-span {
     display: inline-block;
-    margin-top: 1rem;
     font-size: clamp(1.25rem, 1.25vw, 2rem);
     font-weight: 700;
     color: var(--textcolorsecond);
 }
 
 .hero-desc {
-    margin-top: 1rem;
     font-size: clamp(1rem, 1vw, 2rem);
     font-weight: 300;
     text-align: center;
@@ -112,7 +132,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .hero-card {
@@ -124,8 +144,15 @@ header {
     padding: 1.5rem;
     font-size: clamp(1.25rem, 1.25vw, 2rem);
     text-align: center;
-    background: var(--bgcolor);
+    background: rgba(45, 85, 42, 0.9);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     color: var(--textcolorprimary);
+}
+
+.hero-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
 .hero-card-title {
@@ -158,11 +185,14 @@ header {
 .hero-button-start {
     border: none;
     background: var(--bgcolor);
+    box-shadow: 0 8px 20px rgba(68, 128, 64, 0.4);
     color: var(--textcolorprimary);
 }
 
 .hero-button-start:hover {
-    background: #2d552a;
+    cursor: pointer;
+    background: var(--textcoloremphasis);
+    box-shadow: 0 12px 30px rgba(68,128,64,0.55);
     scale: 1.05;
 }
 
@@ -173,6 +203,7 @@ header {
 }
 
 .hero-button-more:hover {
+    cursor: pointer;
     scale: 1.05;
 }
 
