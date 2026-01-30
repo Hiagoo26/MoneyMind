@@ -1,1 +1,163 @@
 @import url(global.css);
+
+/* Voltar*/
+
+.Toback-container {
+    grid-area: back-header;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.Toback-button {
+    border: none;
+    border-radius: 10px;
+    padding: 0.5em clamp(1.5em, 1.5vw, 2.5em);
+    background: var(--bgcolor);
+    transition: background 0.5s ease,
+    scale 0.5s ease;
+}
+
+.Toback-button a {
+    text-decoration: none;
+    color: var(--textcolorprimary);
+}
+
+.Toback-button:hover {
+    cursor: pointer;
+    background: var(--textcoloremphasis);
+    scale: 1.05;
+}
+
+/* Login */
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+section {
+    padding: 0.5rem;
+}
+
+.brand-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.brand-title {
+    font-size: clamp(2rem, 2vw, 3rem);
+    color: var(--bgcolor);
+}
+
+.brand-title span {
+    color: var(--textcoloremphasis);
+}
+
+.brand-icon-img {
+    width: clamp(128px, 2.5vw, 256px);
+}
+
+.login-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.login-title {
+    font-size: clamp(1.5rem, 1.25vw, 2rem);
+    color: var(--bgcolor);
+}
+
+.login-text {
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    font-weight: 300;
+    color: var(--textcolorsecond);
+}
+
+.form-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.form-input {
+    border: 1px solid var(--textcoloremphasis);
+    border-radius: 10px;
+    padding: 0.5em clamp( 1.5em, 1.5vw, 2.5em);
+}
+
+.form-input::placeholder {
+    color: var(--textcoloremphasis);
+}
+
+.form-container button {
+    border: none;
+    border-radius: 10px;
+    padding: 0.75em clamp(1.5em, 1.5vw, 2.5em);
+}
+
+.form-button-Tosign {
+    margin-top: 1rem;
+    background: var(--bgcolor);
+    color: var(--textcolorprimary);
+}
+
+.form-button-Toregister {
+    background: none;
+    color: var(--bgcolor);
+}
+
+.form-button-Toregister span {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+        "back-header"
+        "main";
+        min-height: 100vh;
+    }
+    main {
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        margin: 0 auto;
+        border: 1px solid var(--bgcolor);
+        border-radius: 10px;
+        max-height: 70%;
+        max-width: 1200px;
+        width: 100%;
+        background: radial-gradient(
+        at top,
+        rgba(68, 128, 64, 0.18),
+        transparent
+    )
+    }
+
+    .brand-container {
+        margin-top: 0;
+    }
+
+}
