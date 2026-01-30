@@ -142,7 +142,7 @@ section {
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        gap: 5rem;
+        gap: 3rem;
         margin: 0 auto;
         border: 1px solid var(--bgcolor);
         border-radius: 10px;
@@ -157,7 +157,18 @@ section {
     }
 
     .brand-container {
+        align-self: center;
         margin-top: 0;
+    }
+
+    .login-container {
+        margin: 1rem 0;
+        border: 1px solid var(--bgcolor);
+        border-radius: 10px;
+        padding: 1.5rem;
+        min-height: 70%;
+        min-width: 45%;
+        background: var(--textcolorprimary);
     }
 
 }
